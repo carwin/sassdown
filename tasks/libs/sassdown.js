@@ -138,11 +138,11 @@ module.exports.getFileList = function (assets) {
     if (assets && typeof assets.forEach === 'function') {
         assets.forEach( function (asset) {
             grunt.file.expand(asset).forEach( function (file) {
-                fileList.push(file);
+                fileList.push(file + \n);
                 grunt.verbose.write(file+'...').ok();
             });
             if (asset.match(REGEXP_PATH_HAS_SCHEME)) {
-                fileList.push(asset);
+                fileList.push(asset + \n);
                 grunt.verbose.write(asset+'...').ok();
             }
         });
